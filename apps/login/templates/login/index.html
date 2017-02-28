@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="utf-8">
+       <title>Login/Registration</title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    </head>
+    <body>
+        <div class="Container">
+            <div class="flashes">
+                {% if messages %}
+                <ul class="list-group">
+                    {% for msg in messages %}
+                    <li>{{ msg }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            <div class="register">
+                <form class="registerform" action="/process" method="POST">
+                        {% csrf_token %}
+                    <table>
+                        <thead>
+                            <th><h3>Registration</h3></th>
+                        </thead>
+                        <tr>
+                            <td>First Name:<input type="text" name="first_name"></td>
+                            <td>Last Name:<input type="text" name="last_name"></td>
+                            <td>Email:<input type="text" name="email"></td>
+                        </tr>
+                        <tr>
+                            <td>Password:<input type="password" name="password"></td>
+                            <td>Confirm Password:<input type="password" name="confirm"></td>
+                            <td><input type="submit" class="button" value="Register"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="login">
+                <form class="loginform" action="/login" method="post">
+                    {% csrf_token %}
+                    <table>
+                        <thead>
+                            <th><h3>Login</h3></th>
+                        </thead>
+                            <td>Email:<input type="text" name="email"></td>
+                            <td>Password:<input type="password" name="password"></td>
+                            <td><input type="submit" class="button" value="Login"></td>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

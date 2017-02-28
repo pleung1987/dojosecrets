@@ -1,0 +1,31 @@
+.container{
+    margin-left: 60px;
+    background-color: green;
+    width: 960px;
+    height: 1000px;
+}
+.flashes{
+    color: red;
+}
+h3{
+    font-size: 16px;
+}
+.register{
+    display: inline-block;
+    border: 2px solid blue;
+    margin: 0 0 0 30px;
+    padding: 20px
+}
+.registerform{
+    margin:-25px 20px 0px 25px;
+}
+.login{
+    display: inline-block;
+    border: 2px solid green;
+    margin: 0 0 0 50px;
+    vertical-align: top;
+    padding: 20px
+}
+.loginform{
+    margin: 0 0 0 0;
+}
